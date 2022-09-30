@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formularios</title>
+  </head>
+  <body>
+    <h1>Formulario de registro</h1>
+    <div>
+      <form method="post" action="google.com">
+        <label for="nombre">Nombre: </label>
+        <input
+          type="text"
+          name="nombre"
+          placeholder="Instert your name"
+          id="nombre"
+        />
+        <br />
+        <label for="email">Correo Electronico:</label>
+        <input
+          type="email"
+          name="email"
+         c
+          placeholder="Insert your email"
+        />
+        <br />
+        <label for="password">Contraseña: </label>
+        <input
+          type="password"
+          name="contraseña"
+          placeholder="Instert your password"
+          id="password"
+        />
+        <br />
+        <label for="number">Número de telefono</label>
+        <input
+          type="number"
+          name="number"
+          id="number"
+          placeholder="Insert your mobile number"
+        />
+        <br />
+        <label for="lenguaje">Lenguaje de Programación</label>
+        <select name="lenguaje">
+          <option value="javascript">JavaScript</option>
+          <option value="php">php</option>
+          <option value="python">python</option>
+        </select>
+        <br />
+        <label for="gender" name="gender">Select your gender</label>
+        <label for="woman">
+          <input type="radio" name="gender" id="woman" />Woman
+        </label>
+        <label for="man">
+          <input type="radio" name="gender" id="man" />Man
+        </label>
+        <label for="other">
+          <input type="radio" name="gender" id="other" />other thing
+        </label>
+        <br />
+        <label for="spam">
+          <input type="checkbox" name="spam" id="spam" /> Acepto recibir correos
+        </label>
+        <br />
+        <textarea name="comentarios" id="comentarios" cols="30" rows="10" placeholder="Deja un comentario"></textarea>
+        <br />
+        <input type="submit" value="Enviar" />
+        <input type="reset" value="Vaciar Formulario" />
+
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <input type="text" name="nombre" placeholder="nombre" id="nombre">
+            <input type="text" name="apellido" placeholder="apellido" id="apellido">
+
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

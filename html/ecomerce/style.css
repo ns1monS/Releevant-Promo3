@@ -1,0 +1,282 @@
+html {
+  background-color: #823aa9a2;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+}
+
+body{
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  position: relative;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
+}
+
+
+.container{
+  display: flex;
+  
+}
+
+header{
+  z-index: 0;
+}
+
+h2 {
+  font-family: "Font Awesome 5 Free";
+  font-size: 20px;
+}
+
+header h2 {
+  margin: 0%;
+  color: aliceblue;
+}
+
+nav {
+  height: auto;
+  background-color: #833aa9;
+  text-align: center;
+  display: flow-root;
+    right: 0%;
+    left: 0%;
+}
+nav h2 {
+  text-align: left;
+  color: azure;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+nav ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0%;
+}
+
+nav ul li {
+  float: left;
+  padding: 0%;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 18px;
+}
+
+nav ul li a:hover {
+  background-color: #929fb3;
+}
+
+footer {
+  background-color: #833aa9;
+  position:static;
+  top: 100%;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 50%;
+  left: 0%;
+  right: 0%;
+}
+
+footer h2 {
+  font-size: 20px;
+  padding-left: 20px;
+}
+footer a:hover {
+  background-color: #929fb3;
+}
+
+footer ul li {
+  list-style-type: none;
+  text-align: left;
+}
+.placeholder-icon {
+  padding: 0.25em 0.6em;
+  border-radius: 0.3rem;
+  border: 1px solid white;
+  box-shadow: 0 2px 3px rgba(0 0 0 / 0.15);
+  width: 50%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 100%;
+}
+
+footer button {
+  color: white;
+  font-size: large;
+  background: none;
+  border-style: none;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.containerLog {
+  display: flex;
+  position: absolute;
+}
+
+form {
+  text-align: center;
+  display: grid;
+  border-style: double;
+  border-radius: 20px;
+  background-color: #ffffff;
+  margin-left: 300px;
+  margin-top: 100px;
+  position:absolute;
+  margin-bottom: 20px;
+  
+}
+
+
+.loginImput
+ {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2%;
+}
+
+.loginSpan {
+  font-style: normal;
+  font-size: 15px;
+  text-align: left;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+footer div {
+  display: flex;
+  font-size: medium;
+}
+
+.textleft {
+  text-align: right;
+}
+
+
+
+footer ul li {
+  text-decoration: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+footer label{
+  color: black;
+}
+
+.iconoUl{
+  display: flex;
+  list-style-type: none;
+}
+
+.iconoUl img{
+  width: 20px;
+  height: auto;
+}
+
+aside ul li {
+  list-style-type: none;
+}
+
+aside ul li img {
+  width: 10%;
+  height: 10%;
+}
+
+.bordersec{
+  border: plum;
+  border-radius: 2px;
+  border-style: initial;
+  padding-bottom: 50PX;
+}
+
+article img {
+  width: auto;
+  height: auto;
+}
+article ul li{
+  list-style-type: none;
+}
+
+.formidable{
+  align-items: flex-start;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  grid-template-rows: auto 150px ;
+}
+
+.grid-container div {
+  
+  text-align: center;
+}
+
+.item1 {
+  grid-column: 2   / -1;
+    text-align: center;
+
+}
+
+.carro{
+  position: relative;
+}
+
+.numCarro{
+  position: absolute;
+  color: blue;
+  top:-6px;
+
+}
+
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+
+  width: 384px;
+  height: 481px;
+
+  /* Interface/Light */
+
+  background: #FBFDFE;
+  box-shadow: 0px 16px 16px -16px rgba(79, 91, 97, 0.15);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.card-placeholder{
+  background: #EDF4F7;
+  height: 240px;
+  width: 100%;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card-title-grp{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px;
+  gap: 8px;
+  width: 100%;
+}
+
+

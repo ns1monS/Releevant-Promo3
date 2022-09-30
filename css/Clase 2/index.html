@@ -1,0 +1,63 @@
+<!-- Importación de fuente de google -->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Outfit" rel="stylesheet" />
+
+<!-- No tocar ni mirar este CSS del profe ¬¬ -->
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+<!-- Estilo incrustado para el ejercicio -->
+<style type="text/css">
+  p {
+    display: inline;
+  }
+</style>
+
+<h1>Ejercicio 1</h1>
+<p>Coloca correctamente los elementos de la card de producto</p>
+
+<div class="card">
+  <div class="card-placeholder"></div>
+  <div class="card-content">
+    <div class="card-title-grp">
+      Cafetera Taurus
+      <div class="price-grp">
+        27
+        <div class="currency">€</div>
+      </div>
+    </div>
+    <!-- Este error pondrá nervioso al usuario, mejor ocultarlo -->
+    <div style="color: red; display: none">
+      Error de carga, peligro, peligro!!
+    </div>
+    <div class="rating">
+      <!-- Estas estrellas deberían estar unas junto a otras -->
+      <p class="filled">★</p>
+      <p class="filled">★</p>
+      <p class="filled">★</p>
+      <p class="">★</p>
+      <p class="">★</p>
+    </div>
+    <p>Esta cafetera es la mejor del mercado.</p>
+    <div class="card-footer">
+      <!-- Estos elaces deberían estar unos junto a otros -->
+      <a href="#" class="button cta" style="display: inline-block"
+        >Añadir al carrito</a
+      >
+      <a href="#" class="button" style="display: inline-block">Ver</a>
+    </div>
+  </div>
+</div>
+
+<h1>Ejercicio 2</h1>
+<p>
+  Coloca correctamente el indicador de cantidad del botón carrito y las flechas
+  del slider del jumbotron
+</p>
+
+<a class="button cart" style="position: relative" href="#">
+  <span>★</span>
+  Carrito
+  <span class="item-count" style="position: absolute; top: -10px; right: -15px"
+    >5</span
+  >
+</a>

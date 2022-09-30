@@ -1,0 +1,14 @@
+.fondo{
+    z-index: 1 ;
+    position: absolute;
+}.fondo2{
+    z-index: 2;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+
+}
+body{
+    z-index: 0;
+    position: absolute;
+}

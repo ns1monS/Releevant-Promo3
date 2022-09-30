@@ -1,0 +1,14 @@
+.container{
+    border-color: pink;
+    border-style:inset ;
+    border: 50%;
+    height: 40%;    
+    
+}
+.span1{
+    margin-top: 20px;
+    color: aquamarine;
+    text-align: center;
+    font-size: 50px;
+    line-height: 50%;
+}

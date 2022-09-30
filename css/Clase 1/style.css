@@ -1,0 +1,10 @@
+  h1{ color: green}
+  span{ color: red}
+
+  .frodo{
+    color: blue;
+  }
+
+  p{
+    display: inline;
+  }

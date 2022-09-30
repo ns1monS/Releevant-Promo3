@@ -1,0 +1,45 @@
+
+
+h1{
+    color: brown;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    
+}
+
+h3{
+    color: brown;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.container{
+    text-align: center;
+    z-index: 1;
+    border-color: brown;
+    border-style: inset;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-bottom: 50%;
+    border-radius: 20%;
+    
+}
+
+video{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 105%;
+    min-height: 100%;
+    transform: translateX(calc((100% - 100vw) / 2));
+    z-index: -2;
+}
+
+label{
+    color: aliceblue;
+}
+
+
+input{
+    background:none;
+    border-style: none;
+    color:brown;
+}
