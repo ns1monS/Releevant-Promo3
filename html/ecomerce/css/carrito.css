@@ -1,0 +1,9 @@
+.container{
+    padding: 20px;
+    padding-left: 20px;
+    display: grid;
+    text-align: center;
+    border: 20px;
+    border-style: double;
+}
+
