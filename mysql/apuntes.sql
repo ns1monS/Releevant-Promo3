@@ -320,3 +320,72 @@ Bye
 
 
 ---EJERCICIOS HASTA EL 17---
+
+
+/*Ejercicio 7*
+Mostrar la suma total de ventas de la tabla de detalle de albaranes. Resultado:
+9604190.61 */   
+
+SELECT sum(priceEach*quantityOrdered) FROM classicmodels.orderdetails; 9604190.61
+
+/*Ejercicio 8*
+Mostrar cuantas líneas de venta tienen un importe entre 10000 y 20000. Resultado: 6.
+El valor de la línea de venta se obtiene de multiplicar las unidades por el precio. *
+
+*/
+
+SELECT count(orderdetails.orderLineNumber) FROM classicmodels.orderdetails
+where orderdetails.priceEach*orderdetails.quantityOrdered 
+between 10000 and 20000
+
+
+
+/* Ejercicio 9
+Mostrar cuantos países no tienen fecha de independencia. Resultado: 47*/
+
+SELECT count(name) FROM world.country
+where IndepYear is  null
+
+/*11. Buscar cuantas ciudades hay en Francia cuyo nombre termine en “is”. Resultado: 1.*/
+
+SELECT count(Name) FROM city
+where CountryCode = "FRA" 
+and Name LIKE '%is'
+
+/*12. Mostrar en una línea la media, el máximo y el mínimo de los años de independencia de
+todos los países del mundo. Resultado: 1847.2604, 1994, -1523*/
+
+SELECT min(IndepYear),max(IndepYear),avg(IndepYear) 
+FROM country
+
+/* 13. Mostrar los continentes donde haya países con el año de independencia informado 
+Resultado: Asia, Africa, Europe, South America, North America y Oceania*/
+
+SELECT  DISTINCT Continent FROM world.country
+where IndepYear is not null
+
+/*14. Cuántos países hay en el continente África. Resultado: 58.
+*/
+
+SELECT count(Name) FROM world.country
+where Continent = "Africa"
+
+/*15. Mostrar el número de países por cada año de independencia, donde el año de
+independencia sea superior a 1980. Resultado: 8 filas.*/
+
+SELECT  distinct IndepYear FROM world.country
+where IndepYear is not null and IndepYear > 1980
+
+/*16. Mostrar los años de independencia en los que dos o más países la consiguieron, donde
+el año de independencia sea superior a 1980. Resultado: 4 filas.*/
+
+SELECT name, indepyear from country 
+where IndepYear >1980 
+group by IndepYear HAVING COUNT(1)>1
+
+/*17. Mostrar las ciudades del mundo que existen más de una vez y cuántas veces se repiten.
+Resultado: 67 filas.*/
+
+select name,count(name) from city 
+group by name
+having count(name)>1

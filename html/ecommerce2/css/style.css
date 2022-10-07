@@ -75,9 +75,13 @@ header{
     padding: var(--m) var(--s);
     text-decoration: none;
     color: #eec38e;
+    transition: 1s;
+    
+
   }
   nav ul li a:hover {
     background-color: #f8efce;
+    border-radius: 40%;
   }
 
 
@@ -89,12 +93,14 @@ header{
 
   .carro{
     position: relative;
+    
   }
   
   .numCarro{
     position: absolute;
     color: #f8efed;
     top:-6px;
+    
 
   }
 
@@ -127,6 +133,7 @@ header{
     color: var (var(--negro));
     border-radius: var(--s);
     text-decoration: none;
+    transition: 1s;
   }
 
   .button:hover{

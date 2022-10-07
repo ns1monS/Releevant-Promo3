@@ -1,0 +1,29 @@
+aside section div{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    margin: 20px 0;
+    transition:  3s;
+}
+
+main div.container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+aside section:hover div {
+    margin-left: 200px;
+} 
+
+
+
+.bodyContainer{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.containerMain{
+    justify-content: end;
+}
