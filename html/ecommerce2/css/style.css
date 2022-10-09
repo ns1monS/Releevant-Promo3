@@ -81,7 +81,7 @@ header{
   }
   nav ul li a:hover {
     background-color: #f8efce;
-    border-radius: 40%;
+    border-radius: var(--s);
   }
 
 
@@ -162,11 +162,21 @@ header{
   footer .footer-inner{
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
   footer .footer-inner a{
     text-decoration: none;
     color:#f8efce;
   }
+
+  .columna{
+    display: table-column;
+  }
   
+
+  .container2{
+    display:flex;
+  }
+
+

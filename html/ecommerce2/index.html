@@ -33,6 +33,7 @@
             </nav>
             <nav class="menu">
                 <ul>
+                    <li><a href="contacto.html">Iniciar Sesión</a></li>
                     <li><a href="contacto.html">Cerrar Sesión</a></li>
                     <li><a href="contacto.html">Ayuda</a></li>
                 </ul>
@@ -41,10 +42,11 @@
         </div>
 
     </header>
-    <div>
+    
+    <div class="container2">
         <aside>
             <section>
-                <h1>Productos de temporada</h1>
+                <h1 style="display:inline-block ;">Productos de temporada</h1>
                 <div>Producto 1</div>
                 <div>Producto 2</div>
                 <div>Producto 3</div>
@@ -55,9 +57,9 @@
             <div class="containerMain">
                 <section>
                     <div>
-                        <article>
-                            <div>
-                                <img src="" alt="">
+                        <article class="containerArticle">  
+                            <div class="containerProducts">
+                                <img class="productoDestacado" src="recursos/piano.png" alt="">
                                 <div>
                                     <p>Nombre</p>
                                     <p>precio</p>
@@ -66,8 +68,8 @@
                             </div>
                         </article>
                         <article>
-                            <div>
-                                <img src="" alt="">
+                            <div class="containerProducts">
+                                <img class="productoDestacado" src="recursos/guitarra.png" alt="">
                                 <div>
                                     <p>Nombre</p>
                                     <p>precio</p>
@@ -79,7 +81,6 @@
                 </section>
             </div>
         </main>
-
     </div>
 
 
@@ -116,8 +117,8 @@
                     </ul>
                 </div>
             </div>
-            <div>
-                <form>
+            <div class="columna">
+                <form >
                     <label for="email">Únete a nuestra newsletter y recibe ofertas diarias
                         <input type="email" name="email" id="email" placeholder="Suscribeme" />
                     </label>

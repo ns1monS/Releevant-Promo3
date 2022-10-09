@@ -5,11 +5,16 @@ aside section div{
     margin: 20px 0;
     transition:  3s;
 }
+aside section h1{
+    transition: 3s;
+    display: inline;
+}
 
 main div.container{
     display:flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
 aside section:hover div {
@@ -27,3 +32,26 @@ aside section:hover div {
 .containerMain{
     justify-content: end;
 }
+
+.containerProducts{
+    display:flex;
+    padding:10%;
+   background-color: aliceblue;
+  }
+  .productoDestacado{
+    width: 10%;
+    height: 10%;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+  
