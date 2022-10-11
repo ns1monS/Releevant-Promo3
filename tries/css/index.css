@@ -1,0 +1,36 @@
+.carousel-inner{
+    max-height: 39rem;
+}
+.numCarro{
+    position: absolute;
+    color: blue;
+    top:-6px;
+  
+  }
+
+  header a{
+    text-decoration: none;
+  }
+
+  .icons-inner{
+    display: flex;
+  }
+  .icons-inner  ul li{
+    display:inline-block;
+    justify-content: space-around;
+}
+  .icons-inner  ul li img{
+    height: 50px;
+    width: 50px;
+}
+
+@media (max-width:768px) {
+  #intro{
+    width: 90%  !important; 
+  }
+  .servicios-fila{
+    width: 100% !important;
+    text-align: center;
+  }
+  
+}

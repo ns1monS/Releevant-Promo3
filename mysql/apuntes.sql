@@ -1,4 +1,11 @@
 /*
+
+
+IMPORTANTE!!!
+AQUELLOS SCRIPTS SIN COMENTAR APUNTES PENDIENTES POR COMENTAR
+IGNORAR Y MIRAR SOLO LOS EXPLICADOS Y COMENTADOS
+
+
 mayor que >
 menor que <
 
@@ -251,6 +258,9 @@ where customers.customerNumber = orders.customerNumber;
 y orderNumber y customerNumber de la tabla de orders*/
 
 
+
+---- Ignorar completamente---
+
 INSERT INTO `proveedores`(`idProveedores` , `nombre` , `direccion` , `ciudad` , `provincia`)
 VALUES(1 , "Prolongo" , "calle mandarinas" , "mala" , "malaga");
 
@@ -317,7 +327,7 @@ Query OK, 0 rows affected (0.02 sec)
 mysql> EXIT;
 Bye
 
-
+---- fin de la ignoración-----
 
 ---EJERCICIOS HASTA EL 17---
 
@@ -346,6 +356,13 @@ Mostrar cuantos países no tienen fecha de independencia. Resultado: 47*/
 SELECT count(name) FROM world.country
 where IndepYear is  null
 
+/*Solucion alternativa*/
+
+SELECT count(*)-count(indepyear) from world.country
+
+/*Ejercicio 10 */
+select count(name) from country where indepyear between 1920 and 1950;
+
 /*11. Buscar cuantas ciudades hay en Francia cuyo nombre termine en “is”. Resultado: 1.*/
 
 SELECT count(Name) FROM city
@@ -373,13 +390,14 @@ where Continent = "Africa"
 /*15. Mostrar el número de países por cada año de independencia, donde el año de
 independencia sea superior a 1980. Resultado: 8 filas.*/
 
-SELECT  distinct IndepYear FROM world.country
+SELECT   IndepYear,count(*) FROM world.country
 where IndepYear is not null and IndepYear > 1980
+group by indepyear
 
 /*16. Mostrar los años de independencia en los que dos o más países la consiguieron, donde
 el año de independencia sea superior a 1980. Resultado: 4 filas.*/
 
-SELECT name, indepyear from country 
+SELECT count(name), indepyear from country 
 where IndepYear >1980 
 group by IndepYear HAVING COUNT(1)>1
 
@@ -389,3 +407,32 @@ Resultado: 67 filas.*/
 select name,count(name) from city 
 group by name
 having count(name)>1
+
+select customers.customerNumber, orderNumber,orders.customerNumber, customerName
+from customers left join orders
+on customers.customerNumber = order.customerNumber
+
+select customers.customerNumber, orderNumber,orders.customerNumber, customerName
+from orders right join customers
+on customers.customerNumber = orders.customerNumber
+
+
+
+
+ left join
+
+inner join
+
+right outer join
+
+
+full outer join
+
+cross join
+
+left outer join
+
+right outer join
+
+
+full outer join

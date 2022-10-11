@@ -1,0 +1,13 @@
+.container {
+    max-width: 960px;
+  }
+  .fluid-container{
+    padding: 25%;
+  }
+
+  .centrado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 200px;
+  }

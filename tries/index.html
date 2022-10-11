@@ -1,14 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-  </head>
-  <body>
-    <header>
-        
-    </header>
-  </body>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <!-- Esto es el Header-->
+  <header class="container-fluid bg-primary d-flex justify-content-between">
+    
+    <a class="navbar-brand" href="#"><span class="text-light fs-5 fw-bold"> SimGames</span></a>
+    <div class="justify-content-around ">
+    <a href="iniciarSesion.html" class="text-light fs-5 fw-bold p-2"> Iniciar sesion</a>
+    <a href="login.html" class="text-light fs-5 fw-bold p-2" >Registrarse</a>
+    <button class="text-light fs-5 fw-bold bg-transparent  border-0">Carrito<span class="numCarro">5</span></button>  
+  </div>
+  </header>
+  <!--Esto es el navbar-->
+  <nav class="navbar navbar-expand-lg bg-light p-3" id="menu">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre nosotros</a>
+          </li>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary btn-primary-outline-success" type="button">Buscar</button>
+          </form>
+      </div>
+    </div>
+  </nav>
+  <!--Esto va a ser un Carrousel para los productos princiopales-->
+
+  <div id="carouselExampleIndicators" class="carousel slide carrousel" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="3500">
+        <img src="recursos/destiny.jpg" class="d-block w-100" alt="...">
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3500">
+        <img src="recursos/rdr2.jpg" class="d-block w-100" alt="...">
+      </div>
+
+      <div class="carousel-item" data-bs-interval="3500">
+        <img src="recursos/HaloInfinite.jpeg" class="d-block w-100" alt="...">
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <section class="w-50 mx-auto text-center pt-5" id="intro">
+    <h1 class="p-3 fs-2 border-top border-3">Estamos para darte el
+      <span class="text-primary">juego que buscas</span>
+    </h1>
+    </section>
+
+    <!--Servicios-->
+    <section class="container-fluid justify-content-center">
+      <div class="row w-75 mx-auto  servicios-fila" >
+        <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5 icono-wrap">
+          <img src="recursos/venta.png" alt="ofertas" width="180" height="160">
+          <h3 class="fs-5 mt-4 px-4 pb-1">Venta</h3>
+          <p class="px-4">Vendemos los juegos que buscas a un buen precio</p>
+        </div>
+      
+      <div class="col-lg-6 col-md-12 col-sm-12 d-flex justify-content-start my-5">
+        <img src="recursos/compramos.png" alt="ofertas" width="180" height="160">
+        <h3 class="fs- mt-4 px-4 ">Compra</h3>
+        <p class="p-4">compramos tus juegos</p>
+      </div>
+      </div>
+    </div>
+    </section>
+
+    <!--Iconos de pagos seguros y confianza-->
+    <section class="container-lg icons-inner">
+      <ul class="list-unstyled">
+        <li class="p-2">
+          <img src="recursos/iconos/pago.png"> Pago Seguro
+          100% Garantizado
+        </li>
+        <li class="p-2">
+          <img src="recursos/iconos/envio.png" alt=""> Envio Gratis
+          En pedidos de +100€
+        </li>
+        <li class="p-2">
+          <img src="recursos/iconos/check.png" alt="">2 Años de Garantizad
+          En todo los gadgets
+        </li>
+        <li>
+          <img src="recursos/iconos/ofertas.png" alt=""> Ofertas Únicas
+          Precios Mayoristas
+        </li>
+      </ul>
+  </section>
+
+  <!--FOOTER-->
+  <div class="container  w-50 mx-auto text-center pt-5 border-top border-3"  >
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3">
+          <h5>SimGames</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Centro de ayuda</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Servicio al consumidor</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Escribenos</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Servicio Telefonico</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h5>Store</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politica de privacidad</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Condiciones de compra</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Opiniones de clientes</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Aviso de Privacidad y cookies</a></li>
+          </ul>
+        </div>
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"/></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"/></svg></a></li>
+          <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"/></svg></a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
