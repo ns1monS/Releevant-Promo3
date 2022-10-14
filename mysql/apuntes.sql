@@ -408,31 +408,113 @@ select name,count(name) from city
 group by name
 having count(name)>1
 
-select customers.customerNumber, orderNumber,orders.customerNumber, customerName
-from customers left join orders
-on customers.customerNumber = order.customerNumber
+/* 18  Mostar las ciudades de más de un millón de habitantes donde se hable español en el 
+país. Resultado: 39 filas. */
 
-select customers.customerNumber, orderNumber,orders.customerNumber, customerName
-from orders right join customers
-on customers.customerNumber = orders.customerNumber
-
-
-
-
- left join
-
-inner join
-
-right outer join
+select * from countrylanguage  join country 
+on countrylanguage.CountryCode = country.Code
+join city
+on Country.code = city.CountryCode
+where Language = "Spanish"
+and city.Population > 1000000
 
 
-full outer join
+/* EXTRA Queremos sacar ciudades con mas de un millon de habitantes y veamos el nombre de la 
+ciudad y pais al que pertenece*/
 
-cross join
+select city.name, country.name,city.Population from city join country
+on city.CountryCode = country.Code
+where city.population > 2000000
+ORDER BY 3 desc 
 
-left outer join
 
-right outer join
+/* EXTRA los paises con ciuades de mas de 2 millones de habitantes y en orden descendente */
+
+select  country.name,count(city.name) from city join country
+on city.CountryCode = country.Code
+where city.population > 2000000
+group by 1
+order by 2 desc
 
 
-full outer join
+
+/* 19  Mostrar el número de clientes que ha comprado el producto S24_1937. Resultado: 24 
+clientes. */
+select count(distinct customerNumber) from orders join orderdetails
+on orders.orderNumber = orderdetails.orderNumber
+where productCode = "s24_1937"
+
+/*20  Obtener para cada categoría de producto (productLine) el precio máximo, mínimo y 
+medio de la categoría.*/    
+
+select products.productLine, max(products.buyPrice),
+min(products.buyPrice), avg(products.buyPrice) 
+from products
+join productLines
+on products.productline = productlines.productLine
+group by 1
+
+/*21 Obtener la lista de empleados con el nombre de su jefe.*/
+
+select empleados.employeeNumber as empleado , concat(empleados.lastName ,' ', empleados.firstName) , 
+	   jefes.employeeNumber , concat(jefes.lastName ,' ',empleados.firstName)
+	from employees as empleados 
+	join employees as jefes 
+	on empleados.employeeNumber = jefes.reportsTo
+
+
+
+/*Obtener la lista de clientes y el importe de sus compras, 
+hayan comprado o no*/
+
+
+select customers.customerName , payments.amount from customers
+left join payments
+on customers.customerNumber = payments.customerNumber
+group by customers.customerName
+
+
+
+
+
+/*Obtener el código y el nombre de los clientes que no hayan comprado*/
+
+select customers.customerNumber , customers.customerName from customers
+left join payments
+on customers.customerNumber = payments.customerNumber
+where  payments.amount is  null
+group by customers.customerName 
+
+
+
+/*Este para nota: Total ventas de todos los empleados,
+ tengan o no ventas (difícil)*/
+
+
+
+/*Cuantos clientes hay en cada oficina?*/
+
+
+select count(customers.customerName), offices.officeCode,offices.city from customers
+join offices
+on customers.city = offices.city
+group by customers.city
+
+/*Cuál es la deuda de los clientes?*/
+
+
+
+/*Ejercicio hecho en clase*/
+
+/*Hecho con JOIN*/
+
+select city.name as a1 , country.Code  as codigo from country
+join city 
+on city.CountryCode = country.Code 
+where country.Name like 'E%'
+
+/*Hecho con dos select*/
+
+select name,countrycode
+from city
+where city.CountryCode in (select code  from country where Name like 'E%')

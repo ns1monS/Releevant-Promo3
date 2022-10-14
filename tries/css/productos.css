@@ -1,0 +1,37 @@
+
+/*main{
+    display: block;
+}
+.globalContainer{
+    max-width: calc(1200px + 40px);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gridProductos{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 220px 1fr;
+    margin: 0 auto;
+
+}
+
+.gridProductos aside{
+    display: block;
+}
+
+.gridProductos aside form{
+    padding: 20px;
+    position: relative;
+}
+
+.gridProductos section{
+    display: block;
+}
+
+*/
+
+figure{
+    overflow: hidden;
+    height: 160px;
+}
