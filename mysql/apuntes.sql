@@ -325,23 +325,7 @@ mysql> COMMIT;
 Query OK, 0 rows affected (0.02 sec)
 
 mysql> EXIT;
-Bye
-
----- fin de la ignoración-----
-
----EJERCICIOS HASTA EL 17---
-
-
-/*Ejercicio 7*
-Mostrar la suma total de ventas de la tabla de detalle de albaranes. Resultado:
-9604190.61 */   
-
-SELECT sum(priceEach*quantityOrdered) FROM classicmodels.orderdetails; 9604190.61
-
-/*Ejercicio 8*
-Mostrar cuantas líneas de venta tienen un importe entre 10000 y 20000. Resultado: 6.
-El valor de la línea de venta se obtiene de multiplicar las unidades por el precio. *
-
+Bye66
 */
 
 SELECT count(orderdetails.orderLineNumber) FROM classicmodels.orderdetails
@@ -456,16 +440,24 @@ group by 1
 
 /*21 Obtener la lista de empleados con el nombre de su jefe.*/
 
-select empleados.employeeNumber as empleado , concat(empleados.lastName ,' ', empleados.firstName) , 
-	   jefes.employeeNumber , concat(jefes.lastName ,' ',empleados.firstName)
-	from employees as empleados 
-	join employees as jefes 
-	on empleados.employeeNumber = jefes.reportsTo
+
+
+	/*23 */
+	select concat(employees.firstName, ' ',employees.lastName) as empleados,
+date_format(orders.orderDate, "%Y%d"),
+sum(orderdetails.quantityOrdered*orderdetails.priceEach) as ventas
+from classicmodels.customers, classicmodels.orders , classicmodels.orderdetails,
+classicmodels.employees
+where customers.customerNumber = orders.customerNumber
+and orders.orderNumber = orderdetails.orderNumber
+and customers.salesRepEmployeeNumber = employees.employeeNumber
+group by 1,2 ;
 
 
 
 /*Obtener la lista de clientes y el importe de sus compras, 
 hayan comprado o no*/
+
 
 
 select customers.customerName , payments.amount from customers
@@ -495,6 +487,11 @@ group by customers.customerName
 /*Cuantos clientes hay en cada oficina?*/
 
 
+
+
+
+
+
 select count(customers.customerName), offices.officeCode,offices.city from customers
 join offices
 on customers.city = offices.city
@@ -518,3 +515,124 @@ where country.Name like 'E%'
 select name,countrycode
 from city
 where city.CountryCode in (select code  from country where Name like 'E%')
+
+
+
+/*GRUPOS DE EJERCICIOS 2 */
+
+
+/*1. Contar los paises con menos de 10.000 habitantes. Resultado: 19.*/
+
+select country.Name , Country.Population from country
+where Population< 10000
+
+/*2. Contar los paises con más de 9999 habitantes y menos de 50001. Resultado: 15.*/
+
+select country.Name , Country.Population from country
+where Population between 10000 and 50001
+
+
+/*3. Contar los continentes con algún pais con una esperanza de vida menor del 50% (LifeExpectancy).
+Resultado: 3.*/
+
+select count(distinct(country.Continent)) from country
+where LifeExpectancy < 50
+
+
+
+/*4. Contar los paises con esperanza de vida informada. Resultado: 222.*/
+
+select count(country.name) from country 
+where LifeExpectancy is not null
+
+
+
+/*5. Contar los paises con esperenza de vida sin informar. Resultado: 17.*/
+
+
+select count(country.name) from country 
+where LifeExpectancy is  null
+
+
+
+
+/*6. Mostrar los códigos de pais que tienen ciudades llamadas Cordoba, Sevilla o Cadiz. Resultado: ARG,
+ESP, PHL, MEX.*/
+
+
+select   distinct(city.CountryCode) from city
+where city.Name in ("Cordoba","Sevilla","Cadiz")
+
+
+
+
+/*7. Contar las regiones/distritos (district) que tiene España (ESP). Resultado: 17.*/
+
+select count(distinct(city.district)) from city
+where CountryCode = "ESP"
+
+
+/*8. Mostrar el nombre y los habitantes de las ciudades de las regiones cuyo nombre contenga 'Kata'.
+Resultado: 9*/
+
+select count(distinct(city.district)) from city
+where CountryCode = "ESP"
+like '%kata%'
+
+select city.name , select city.population from city
+where city.district like "%kata"
+
+
+/*Ejercicios con group by*/
+
+
+
+/*9. Mostrar las formas de gobierno y el número de paises de Europa (Continent) donde la forma de
+gobierno contenga 'public' o su año de independecia sea menor de 1500. Resultado: 5*/
+
+
+select  distinct(GovernmentForm),count(Name) from country
+where GovernmentForm  LIKE ("%public%")
+and IndepYear < 1500
+group by Continent = "Europe"
+
+
+/*10. Mostrar el número de paises por continente donde ha habido un incremento positivo de producto
+interior bruto (GNP-GPNOld). Mostrar ordenado por el número de paises en orden descendente.*/
+
+select count(country.name) from country
+where GNP >GNPOld 
+group by Continent DESC
+
+/*
+11. El mismo ejercicio anterior, pero solo mostrar los grupos que tengan menos de 10 paises.*/
+
+select count(country.name) from country
+where GNP >GNPOld 
+and count(country.name) < 10
+group by Continent DESC
+
+/*12 Mostrar los paises de Oceania con el nombre de su capital.*/
+
+
+SELECT country.name as Pais , city.Name as capital 
+from country
+join city 
+on city.id = country.Capital
+where Continent = "Oceania"
+
+
+/* 13 Mostrar pais y capital de paises donde el español se hable más de un 70% (campos Language y
+Percentage), ordenado por la población del pais en orden descendente.*/
+
+SELECT distinct country.name as Pais , city.Name as capital 
+from country
+join city 
+on city.id = country.Capital
+join countrylanguage
+on countrylanguage.CountryCode = country.Code
+where countrylanguage.Language = "Spanish" 
+and countrylanguage.Percentage >70
+group by country.Population desc
+
+quellos paises donde la esperaznad de vida sea superior a la media
