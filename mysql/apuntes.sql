@@ -612,6 +612,11 @@ where GNP >GNPOld
 and count(country.name) < 10
 group by Continent DESC
 
+
+
+SELECT continent,count(*) from country where GNP-GNPold > 0 group by 1 order by 2 desc	
+
+
 /*12 Mostrar los paises de Oceania con el nombre de su capital.*/
 
 
@@ -635,4 +640,3 @@ where countrylanguage.Language = "Spanish"
 and countrylanguage.Percentage >70
 group by country.Population desc
 
-quellos paises donde la esperaznad de vida sea superior a la media

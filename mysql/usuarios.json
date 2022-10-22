@@ -1,0 +1,5 @@
+db.usuarios.insertOne({
+    id:"1",
+    email:"noelsimonaguilar@gmail.com",
+    password:"1234"
+  })
