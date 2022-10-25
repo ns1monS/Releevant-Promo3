@@ -1,0 +1,39 @@
+[
+{
+    "nombre": "Mariano",
+    "apellidos": "Romero Quintana",
+    "email":"marianoromero@gmail.com",
+    "telefono":"664332458",
+    "password":"Mariano24"
+  },
+  {
+    "nombre": "larry",
+    "apellidos": "capija ",
+    "email":"larry@gmail.com",
+    "telefono":"772654864",
+    "password":"larry24"
+  },
+  {
+    "nombre": "Rosa",
+    "apellidos": "Rola conde",
+    "email":"mrosaperromero@gmail.com",
+    "telefono":"6645232458",
+    "password":"Rosa24"
+  },
+
+  {
+    "nombre": "Rosa",
+    "apellidos": "Rola conde",
+    "email":"mrosaperromero@gmail.com",
+    "telefono":"6645232458",
+    "password":"Rosa24"
+  },
+  {
+    "nombre": "Rosa",
+    "apellidos": "Rola conde",
+    "email":"mrosaperromero@gmail.com",
+    "telefono":"6645232458",
+    "password":"Rosa24"
+  }
+
+]

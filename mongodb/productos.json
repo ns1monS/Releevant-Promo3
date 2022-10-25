@@ -1,0 +1,42 @@
+
+[
+  {
+    "precio": "32€",
+    "nombre": "Destiny2",
+    "stock": "664332458",
+    "rating": 1,
+    "opiniones": [
+      {
+        "nombre": "pedro",
+        "detalleOpinion": "Mu cbulo",
+        "ratingIndividual": 3
+      },
+      {
+        "nombre": "rocio",
+        "detalleOpinion": "una caca",
+        "ratingIndividual": 1
+      }
+    ],
+    "categoria": "FPS"
+  },
+
+  {
+    "precio": "15€",
+    "nombre": "Fifa",
+    "stock": "32",
+    "rating": 5,
+    "opiniones": [
+      {
+        "nombre": "pedro",
+        "detalleOpinion": "messi esta mejor hecho",
+        "ratingIndividual": 5
+      },
+      {
+        "nombre": "pepe",
+        "detalleOpinion": "lo mismo de todos los años",
+        "ratingIndividual": 5
+      }
+    ],
+    "categoria": "sportGame"
+  }
+]

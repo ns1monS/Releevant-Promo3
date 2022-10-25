@@ -1,0 +1,50 @@
+
+ [{
+    "usuario":"mariano",
+    "total":"40",
+    "fecha":"23/9/2023",
+    "cupon":[{
+        "nombreCupon":"cupon Ahorro",
+        "descuento":"20%"
+    }],
+    "tarjeta":[{
+        "numeroTarjeta":"68468745646A",
+        "titular":"Mariano",
+        "caducidad":2323,
+        "cvv":1234
+    }],
+    "direccion":"c/ torrevieja 24",
+    "estado":"entregado"
+  }
+,
+  {
+    "usuario":"larry",
+    "total":"20",
+    "fecha":"2/9/2023",
+    "tarjeta":[{
+        "numeroTarjeta":"68468745646A",
+        "titular":"Mariano",
+        "caducidad":4323,
+        "cvv":1224
+    }],
+    "direccion":"c/ torrevieja 24",
+    "estado":"entregado"
+  }
+,
+  {
+    "usuario":"benito",
+    "total":"10",
+    "fecha":"4/9/2023",
+    "cupon":[{
+        "nombreCupon":"cupon Ahorro",
+        "descuento":"20%"
+    }],
+    "tarjeta":[{
+        "numeroTarjeta":"68418745646A",
+        "titular":"Mariano",
+        "caducidad":4323,
+        "cvv":1224
+    }],
+    "direccion":"c/ torrenueva 24",
+    "estado":"en camino"
+  }]

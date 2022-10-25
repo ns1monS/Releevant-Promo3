@@ -5,4 +5,4 @@ const alumnos = ["noel","alejandro","alex","juanjo","dani","carlos","yanira","be
 
 let ganador = Math.floor(Math.random()*alumnos.length)
 
-console.log("Le toca presentar a",alumnos[ganador])
+console.log("-------------------------------Le toca presentar a",alumnos[ganador],"------------------------")
