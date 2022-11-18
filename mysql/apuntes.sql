@@ -640,3 +640,21 @@ where countrylanguage.Language = "Spanish"
 and countrylanguage.Percentage >70
 group by country.Population desc
 
+
+/*Obtener listado de ventas*/
+select DISTINCT * ,  usuario.nombre, "tarjeta" 
+as tipodepago from pedido , usuario where  usuario.id = 1
+
+
+select distinct * from pedido
+join usuario
+on usuario.id = pedido.usuario
+
+select sum(cantidad), usuario.nombre, productos.nombre from pedido
+join usuario 
+on usuario.id = pedido.usuario
+join productos 
+on productos.id	= pedido.producto
+where productos.nombre = (select productos.nombre from productos
+ group by 1 order by pedido.cantidad desc limit 1);
+
