@@ -1,0 +1,27 @@
+#carouselExampleCaptions .carousel-caption{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    display: flex;
+    padding-left:15%;
+    background: linear-gradient(90deg, #00000099, transparent);
+}
+
+#carouselExampleCaptions2 .carousel-caption{
+    top:0;
+    bottom: 0;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+}
+
+
+#carouselExampleCaptions2 .carousel-item{
+    height: 360px;
+
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/productos.css" />
+</head>
+
+<body>
+  <!-- Esto es el Header-->
+  <header class="container-fluid bg-primary d-flex justify-content-between">
+    <a class="navbar-brand" href="#"><span class="text-light fs-5 fw-bold"> SimGames</span></a>
+    <div class="justify-content-around">
+      <a href="iniciarSesion.html" class="text-light fs-5 fw-bold p-2 text-decoration-none  ">
+        Iniciar sesion</a>
+      <a href="login.html" class="text-light fs-5 fw-bold p-2 text-decoration-none">Registrarse</a>
+      <button class="text-light fs-5 fw-bold bg-transparent border-0 ">
+        Carrito<span class="numCarro">5</span>
+      </button>
+    </div>
+  </header>
+  <!--Esto es el navbar-->
+  <nav class="navbar navbar-expand-lg bg-light p-3" id="menu">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="productos.html">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre nosotros</a>
+          </li>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary btn-primary-outline-success" type="button">Buscar</button>
+          </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Esto es el main-->
+  <main>
+    <div class="globalContainer m-0 ">
+      <h1 class="text-center">Los Mejores Juegos Al <span style="color:#0d6efd ;">Mejor Precio</span></h1>
+      <div class="gridProductos  d-flex p-2">
+        <aside class="m-0 p-0 d-block">
+          <form class="d-flex" role="search">
+            <input class=" me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-primary btn-primary-outline-success" type="button">Buscar</button>
+          </form>
+          <ul class="list-unstyled p-4">
+            <h3 class="p-3 ">Géneros</h3>
+            <li><input type="checkbox"> Acción</li>
+            <li><input type="checkbox"> Indie</li>
+            <li><input type="checkbox"> Aventuras</li>
+            <li><input type="checkbox"> RPG</li>
+            <li><input type="checkbox"> Estrategia</li>
+            <li><input type="checkbox"> Simulación</li>
+            <li><input type="checkbox"> FPS</li>
+            <li><input type="checkbox"> Deportes</li>
+            <li><input type="checkbox"> MMO</li>
+          </ul>
+        </aside>
+        <section class="d-block w-100">
+          <div>
+            <div class="d-flex justify-content-between p-5">
+              <p>Juegos encontrados</p>
+              <div class="btn-group">
+                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Filtrar
+                </button>
+                <ul class="dropdown-menu">
+                  <li>Precio</li>
+                  <li>Puntuacion</li>
+                  <li>Novedades</li>
+                </ul>
+              </div>
+            </div>
+            <!------------------------------------------------>
+            <div class="row imagenesCards">
+              <!--Contenedor de los contedores de cards-->
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/destinycard.jpg"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/masseffect2card.jpg"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/HaloInfinite.jpeg"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/battlefront2.png"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/steelrising.jpg"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                <div class="card col-3 p-0">
+                  <figure>
+                  <img src="recursos/eldenring.jpg"class="card-img-cap w-100 " alt="...">
+                </figure>
+                  <div class="card-body ">
+                    <h5 class="card-title">Destiny</h5>
+                    <p class="card-text">Explora las estrellas como un guardian luchando contra el mal .</p>
+                    <a href="#" class="btn btn-primary">Saber mas</a>
+                  </div>
+                </div>
+                
+              <!---------------------------->
+            </div>
+            <!--Contenedor de los contedores de cards-->
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+
+  <!--FOOTER-->
+  <div class="container w-50 mx-auto text-center pt-5 border-top border-3">
+    <footer class="py-5">
+      <div class="row">
+        <div class="col-6 col-md-3 mb-3">
+          <h5>SimGames</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Centro de ayuda</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Servicio al consumidor</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Escribenos</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Servicio Telefonico</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <h5>Store</h5>
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Politica de privacidad</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Condiciones de compra</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Opiniones de clientes</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-muted">Aviso de Privacidad y cookies</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Subscribe to our newsletter</h5>
+            <p>Monthly digest of what's new and exciting from us.</p>
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email address</label>
+              <input id="newsletter1" type="text" class="form-control" placeholder="Email address" />
+              <button class="btn btn-primary" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+        <p>&copy; 2022 Company, Inc. All rights reserved.</p>
+        <ul class="list-unstyled d-flex">
+          <li class="ms-3">
+            <a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#twitter" />
+              </svg></a>
+          </li>
+          <li class="ms-3">
+            <a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#instagram" />
+              </svg></a>
+          </li>
+          <li class="ms-3">
+            <a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                <use xlink:href="#facebook" />
+              </svg></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

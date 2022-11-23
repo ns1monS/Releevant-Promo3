@@ -60,7 +60,7 @@ function userDetails() {
       const response = JSON.parse(this.responseText);
 
       let usersDiv = document.getElementById("usuarioDetalles");
-      const users = response;
+      const users = response; 
 
       let htmlContent = "<ul>";
 
@@ -135,6 +135,30 @@ function seePosts(nPag) {
   };
 
   let url = ` https://dummyapi.io/data/v1/post?${numPost}&page=${nPag - 1}`;
+  request.open("GET", url, true);
+  request.setRequestHeader("app-id", "63768b3458fe3bbbbc6f1d68");
+  request.send();
+}
+
+function postsTags() {
+  let request = new XMLHttpRequest();
+  let userId = new URLSearchParams(window.location.search).get("id");
+
+  request.onreadystatechange = function () {
+    console.log(`estado actual ${this.readyState}`);
+
+    if (this.readyState == 4 && this.status == 200) {
+      const response = JSON.parse(this.responseText);
+
+      let usersDiv = document.getElementById("postForTags");
+      const users = response; 
+
+      let htmlContent = "<ul>";
+
+      usersDiv.innerHTML = htmlContent;
+    }
+  };
+  let url = `https://dummyapi.io/data/v1/user/${userId}`;
   request.open("GET", url, true);
   request.setRequestHeader("app-id", "63768b3458fe3bbbbc6f1d68");
   request.send();
