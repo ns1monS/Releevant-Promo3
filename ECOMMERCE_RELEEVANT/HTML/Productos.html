@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="/CSS/Productos.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    
+</head>
+<body onload="productosDestacados()">
+    <header class="container"><!--container es una clase de contenedor principal donde va a tener un ancho maximo-->
+        <div class="container_header-inner">
+            <div class="header-inner">
+                <img src="../imagen/logo-removebg-preview.png"  class="logo" alt="logocabezapelos" width="100"  />
+                <h1 class="titulo-malospelos">Malospelos</h1>
+            </div>
+            <div>
+                <input class="buscador" placeholder=" Buscar producto " name="micarrito"/>
+                <a class="button" href="micarrito.html" target="_blank">Carrito <span id="carrito" class="numerocarro">3</span></a>
+            </div>
+        </div>
+           
+            <nav ><!--nav está destinado sólo para el bloque principal de enlaces de navegación. Un documento puede tener varios elementos <nav> -->
+                <div class="menu flex">   
+                    <ul>
+                        <li><a href="../HTML/Productos.html">Todos los productos</a></li>
+                        <li><a href="../HTML/SobreNosotros.html"> Sobre nosotros</a></li>
+                        <li><a href="../HTML/Contactos.html">Contactos</a></li>
+                        <li><a href="../HTML/gadgets.html">Gadget</a></li>
+                        <li><a href="../HTML/Ofertas.html">Ofertas</a></li>
+                    </ul>
+                    <div class="menu flex">
+                        <ul>
+                            <li><a href="#">Pedidos</a></li>
+                            <li><a href="#">Logout</a></li>
+                        </ul>                                                
+                    </div>
+                </di>
+            </nav>
+        
+    </header>
+
+      <section>
+                <div class="title">
+                    <h1 > Productos para cabellos rizados</h1>
+                    <p>Consigue aquí los mejores productos</p>
+                    <div class="button"><a href="#" class="button">Ver todos</a></div>   
+                </div>
+            <div class="container-card">
+               <div class="card">
+                   <img src="../imagen/mascarilla.webp"  alt="mascarilla"  >
+                    <h4 class="card-title">Mascarilla</h4>
+                    <div class="price-grp"><span >38.50</span> 
+                    <span class="currenci">€</span></div>
+                    <div class="rating">
+                        <form>
+                            <p class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1">★</label>-
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2">★</label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3">★</label>
+                            <input id="radio4" type="radio" name="estrellas" value="2"><!--
+                            --><label for="radio4">★</label><!--
+                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                            --><label for="radio5">★</label>
+                            </p>
+                        </form>
+                    </div>
+                    <div>
+                            <button id="añadiralcarrito" onclick = "carrito()">Añadir al carrito</button>
+                            <a href="/HTML/detallesdelproducto.html">Ver</a>
+                    </div> 
+                </div>
+                <div class="card">
+                    <img src="../imagen/cremadefinidorarizos.webp" alt="cremadefinidorarizos" >
+                    <h4 class="cardtitle">Crema definición de rizos</h4>
+                    <div class="price-gpr"><span>18.90</span> 
+                    <span class="currenci">€</span></div> 
+                    <div class="rating">
+                            <form>
+                                <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                                </p>
+                            </form>
+                    </div>
+                        <div>    
+                                <button>Añadir al carrito</button> <button>Ver</button>
+                        </div>
+                </div>
+    
+                    <div id="destacados">
+
+                    </div>
+                <div class="card">
+                    <img src="../imagen/packmetodocurly.webp"  alt="packcurly" width="200px" height="200px">
+                    <h4 class="cardtitle">Pack método Curly</h4>
+                    <div class="price-gpr"><span >42.60</span>
+                    <span class="currenci">€</span></div>
+                    <div class="rating">
+                            <form>
+                                <p class="clasificacion">
+                                <input id="radio1" type="radio" name="estrellas" value="5"><!--para que no hay salto entre las estrellas 
+                                importante que no haya espacio entre los label y los siguientes imput
+                                --><label for="radio1">★</label><!--
+                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                --><label for="radio2">★</label><!--
+                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                --><label for="radio3">★</label><!--
+                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                --><label for="radio4">★</label><!--
+                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                --><label for="radio5">★</label>
+                                </p>
+                            </form>
+                    <div>
+                            <div>
+                                <button>Añadir al carrito</button> <button>Ver</button>
+                            </div>
+                </div>
+            </div>      
+      </section>
+      <section>
+    <div class="container-card">
+       <div class="card">
+           <img src="../imagen/mascarilla.webp"  alt="mascarilla"  >
+            <h4 class="card-title">Mascarilla</h4>
+            <div class="price-grp"><span >38.50</span> 
+            <span class="currenci">€</span></div>
+            <div class="rating">
+                <form>
+                    <p class="clasificacion">
+                    <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                    --><label for="radio1">★</label><!--
+                    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                    --><label for="radio2">★</label><!--
+                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                    --><label for="radio3">★</label><!--
+                    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                    --><label for="radio4">★</label><!--
+                    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                    --><label for="radio5">★</label>
+                    </p>
+                </form>
+            </div>
+            <div>
+                    <button id="añadiralcarrito" onclick = "carrito()">Añadir al carrito</button>
+                    <button type="button" a href="/HTML/detallesdelproducto.html">Ver</a></button>
+            </div> 
+        </div>
+        <div class="card">
+            <img src="../imagen/cremadefinidorarizos.webp" alt="cremadefinidorarizos" >
+            <h4 class="cardtitle">Crema definición de rizos</h4>
+            <div class="price-gpr"><span>18.90</span> 
+            <span class="currenci">€</span></div> 
+            <div class="rating">
+                    <form>
+                        <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                        --><label for="radio1">★</label><!--
+                        --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                        --><label for="radio2">★</label><!--
+                        --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                        --><label for="radio3">★</label><!--
+                        --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                        --><label for="radio4">★</label><!--
+                        --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                        --><label for="radio5">★</label>
+                        </p>
+                    </form>
+            </div>
+                <div>    
+                        <button>Añadir al carrito</button> <button>Ver</button>
+                </div>
+        </div>
+
+        <div class="card">
+            <img src="../imagen/packmetodocurly.webp"  alt="packcurly" width="200px" height="200px">
+            <h4 class="cardtitle">Pack método Curly</h4>
+            <div class="price-gpr"><span >42.60</span>
+            <span class="currenci">€</span></div>
+            <div class="rating">
+                    <form>
+                        <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5"><!--para que no hay salto entre las estrellas 
+                        importante que no haya espacio entre los label y los siguientes imput
+                        --><label for="radio1">★</label><!--
+                        --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                        --><label for="radio2">★</label><!--
+                        --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                        --><label for="radio3">★</label><!--
+                        --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                        --><label for="radio4">★</label><!--
+                        --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                        --><label for="radio5">★</label>
+                        </p>
+                    </form>
+            <div>
+                    <div>
+                        <button>Añadir al carrito</button> <button>Ver</button>
+                    </div>
+        </div>
+    </div>      
+</section>
+  
+      <div>
+          <h2>Testimonio de clientes</h2>
+          <h4>Consigue ahora los mejores productos en Malospelos</h4>
+          <button>Ver todos</button>
+          <p>Hola, que tal? , algún día lo conseguire,</p> 
+          <p>nadie dijo que el camino fuera a ser fácil,</p> 
+          <p>la constancia está el mérito,ánimo que tu puedes.</p> 
+          <p>MMV</p>
+      
+      </div>
+                 <div>
+                    <img src="../HTML/iconos/opiniones.png"  alt ="icono_opiniones" width="100" height="100">
+                    <h4>opiniones (5)</h4>
+                </div>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<p> 
+                    Quod, voluptatibus! Sit consequuntur sint illo labore ut nostrum temporibus earum et cumque dignissimos,
+                    <p>ex corporis excepturi nemo vero mollitia debitis adipisci?</p>
+                    <img src="../HTML/iconos/caracteristicas.jpg" alt="icono_caracteristicas"   width="75" height="75">
+                    <h1>Caracteristicas del producto</h1>
+                    <img src="iconos/capacidad.png" alt="icono_capacidad" width="50" height="50">
+                    <p><b>Capacidad:</b>Bote de 500ml </p>
+                    <img src="iconos/ecologico.png" alt="icono_ecologico" width="75" height="75">
+                    <p><b>Ecológico:</b><span> elaborado con manteca de karite</span><span>
+                    y otros aceites naturales </span><span>
+                    provinientes de la agricultura ecológica</span></p>
+           
+            
+           <h2>Especificaciones</h2>
+            <ul>
+                <li>Probar en una pequeña zona antes de usar</li>
+                <li>Algunos aceites aunque son ecologicos pueden dar alergia</li>
+                <li>No exponer el producto al sol</li>
+                <li>Aplicar el tamaño de una nuez</li>
+                <li>Aplicar solamente en medios y puntas</li>
+            </ul>
+       
+            <div>
+                <h3>Opiniones destacadas</h3>
+                <h5>Compradores verificados han dejado estas opiniones</h5>
+                <button>Ver todas las opiniones</button>
+            </div>
+            <div>
+                <p>Me encanta este producto, realmente deja mi pelo suave y bastante suelto y deja un brillo muy especial,
+                    <span>además huele genial y en cuanto a la calidad precio, compensa mucho el tarro de 500ml</span></p>
+        
+                </div>
+
+                <div id="destacados"></div>
+               
+               <script src="/JS/productos.js">
+
+                </script>
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinalizarPedido</title>
+    <link rel="stylesheet" href="/CSS/finalizarpedido.css">
+    <link rel="stylesheet" href="/CSS/style.css" />
+    <link rel="stylesheet" href="/CSS/Productos.css">
+    <link rel="stylesheet" href="/CSS/micarrito.css">
+    <link rel="stylesheet" href="/CSS/formasdepago.css">
+</head>
+
+<body>
+        <header class="container">
+            <div class="container_header-inner">
+                <div class="header-inner">
+                    <img src="../imagen/logo-removebg-preview.png"  class="logo" alt="logocabezapelos"  width="100"/>
+                    <h1 class="titulo-malospelos">Malospelos</h1>
+                </div>
+                <div>
+                <button><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Carrito</button>
+                <img src="../HTML/iconos/circuloflecha.png" width="25" height="25">
+                <button><img src="../HTML/iconos/pago.png" width="25" height="25"><b>Pago</b></button>
+                <img src="../HTML/iconos/circuloflecha.png" width="25" height="25">
+                <button><img src="../HTML/iconos/finalizar pedido.jfif" width="25" height="25"><b>Finalizar pedido</b></button>
+                </div>
+            </div> 
+        </header>
+
+        <section>
+            <div class="container_section">
+                <div class="container_section_finCompra">
+                    <h2>Finalizar compra</h2>
+                    <p>Direccion de envio</p>
+
+                    <form >
+                        <div class="input-button">
+                          
+                            <div class="input_linea">
+                                <input type="text" placeholder="Nombre" name="nombre"/>
+                                <input type="text" placeholder="Apellido" name="apellido"/>
+                            </div>
+                            <div class="input_linea">
+                                <input type="number" placeholder="nº telefono" name="telefono"/>
+                                <input type="email" placeholder="e-mail" name="email"/>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Direccion" name="Direccion"/>
+                            </div>
+                            <div class="input_linea" >
+                                <input type="text" placeholder="Provincia" name="Provincia"/>
+                                <input type="number" placeholder="C.P." name="Codigo Postal"/>
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Pais" name="Pais"/>
+                            </div>
+                            <div> 
+                                <button type ="button" class="button">Añadir dirección de envio</button>
+                            </div>
+                        
+                        </div>
+                    </form>
+                </div>
+
+                <div >
+                    <div class="container_button"> 
+                        <label for="Mastercard ....566">
+                        <input type="radio" id="Mastercard....566" value="Mastercard....566" name="tarjetas">
+                        <img src="../HTML/iconos/tarjeta.png" width="25"> Mastercard ....566</label>
+                    </div> 
+
+                    <div class="resumen_pedido">
+                        <h2>Resumen del pedido</h2>
+                        <article class="article_carro">
+                            <h4 class="card-title">Mascarilla</h4>
+                            <div class="price-grp"><span >38.50</span> 
+                            <span class="currenci">€</span></div>
+                            <input type="number" placeholder="-1+">
+                        </article>
+                        <article class="article_carro">
+                            <h4 class="cardtitle">Crema definición de rizos</h4>
+                            <div class="price-gpr"><span>18.90</span> 
+                            <span class="currenci">€</span></div> 
+                            <input type="number" placeholder="-1+">
+                        </article>
+                        <article class="article_carro">
+                            <h4 class="cardtitle">Pack método Curly</h4>
+                            <div class="price-gpr"><span >42.60</span>
+                            <span class="currenci">€</span></div> 
+                            <input type="number" placeholder="-1+"> 
+                        </article>
+                        <div>
+                            <h4>Total</h4>
+                            <div class="price-gpr"><span >100</span>
+                            <span class="currenci">€</span></div> 
+                        </div>
+                            <button class="button">Pagar con tarjeta online</button>
+                    </div>
+                </div>
+            </div>  
+        </section>
+        <section>
+            <div class="container_envio">
+                <div>
+           
+                    <img src="iconos/envio.png" alt="iconoenvio" width="50" />
+                    
+                    <strong>Envio gratis en este pedido</strong>
+                    <p><strong> por compra superior a 100€</strong></p>
+                </div>
+                <div>
+                
+                    <img src="iconos/check.png" alt="iconocheck" width="50" />
+                  
+                    <strong>5€ en tu siguiente compra</strong>
+                    <p><strong>, acumula el 1% de tus compras en descuentos</strong></p>
+                </div>
+           </div>
+        </section>
+
+            <div class="iconos">
+                <div>
+                    <img src="iconos/pago.png" alt="iconopago" width="50" />
+                </div>
+                <div>
+                    <strong>Pago seguro</strong>
+                    <p><strong>200% garantizado</strong></p>
+                </div>
+                <div>
+                    <img src="iconos/envio.png" alt="iconoenvio" width="50" />
+                </div>
+                <div>
+                    <strong> Gratis</strong>
+                    <p><strong> en pedidos de más de 200€</strong></p>
+                </div>
+                <div>
+                    <img src="iconos/check.png" alt="iconocheck" width="50" />
+                </div>
+                <div>
+                    <strong>2 años de garantía</strong>
+                    <p><strong>en todos los badgets</strong></p>
+                </div>
+                <div>
+                    <img src="iconos/ofertas.png" alt="iconoofertas" width="50" />
+                </div>
+                <div>
+                    <strong>Ofertas únicas</strong>
+                    <p><strong>Precios de mayoristas</strong></p>
+                </div>
+            </div>
+        
+        <footer>
+          <div class="container-footer">
+              <div class="footer1"> 
+                    <div class="footer-logo">
+                        <img src="../imagen/logo-removebg-preview.png" alt="imagencabezapelo" width="50" height="50"/>
+                        <h1 class="titulo-malospelos">Malospelos</h1>
+                    </div>
+                    <div class="footer1condiciones">
+                        <div>
+                            <small><p>Centro de Ayuda</p>
+                            <p>Servicio al consumidor</p>
+                            <p>Escríbenos</p>
+                            <p>Servicio telefónico</p></small>
+                        </div>
+                        <div>
+                            <small><p><a href="politicadeprivacidad.html">Política de privacidad</a></p>
+                            <p>Condiciones de compra</p>
+                            <p>Opiniones de clientes</p>
+                            <p>Aviso de privacidad y cookies</p></small>
+                        </div>
+                    </div>
+              </div>
+              <div class="footer2">
+                    <h4>Únete a muestra new letter y recibe ofertas diarias</h4>
+                        <div class="footer-formulario">
+                            <form>
+                                <input type="email" placeholder="introduce tu email" />
+                                <button>Suscribirme</button>
+                                <p><input type="checkbox" id="politica de privacidad" value="politica de privacidad" name="politicadeprivacidad"/>
+                                <small>Acepto la <a href="../HTML/politicadeprivacidad.html">política de privacidad</a>de esta web</small></p>
+                            </form>
+                        </div>
+                        <div class="redes">
+                            <h4>Síguenos en redes</h4>
+                            <img src="../HTML/iconos/facebook.png" alt="iconofacebook" width="25" height="25"/>
+                            <img src="../HTML/iconos/youtube.png" alt="iconoyoutube" width="25" height="25"/>
+                            <img src="../HTML/iconos/twitch.png" alt="iconotwitch" width="25" height="25"/>
+                            <img src="../HTML/iconos/insta.png " alt="iconoinsta"  width="25" height="25"/>
+                        </div>
+              </div>
+          </div>
+        </footer>
+
+</body>
+</html>
