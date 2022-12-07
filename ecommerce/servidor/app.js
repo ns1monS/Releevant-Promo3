@@ -2,6 +2,7 @@ let express = require("express");
 let cors = require("cors");
 let mysql = require("mysql");
 let app = express();
+const { MongoClient } = require("mongodb");
 
 const productoUno = {
   id: 0,
@@ -147,13 +148,16 @@ app.post("/signUp", function (request, response) {
 });
 app.post("/pedido", function (request, response) {
   console.log(request.body);
-  const email = request.body.email;
-  const usuarioPedido = request.body.usuario;
-  const tarjeta = request.body.tarjeta;
-  const nombreTarjeta = request.body.nombre;
-  const direccion = request.body.direccion;
-  const cantidad = request.body.cantidad; 
-  const productoPedido = request.body.prodcuto;
+  let usuario = request.body.usuario;
+  let total = request.body.total;
+  let fecha = request.body.fecha;
+  let cupon = request.body.cupon;
+  let tarjeta = request.body.tarjeta;
+  let direccion = request.body.direccion;
+  let estado = request.body.estado;
+  let envio = request.body.envio;
+  let cantidad = request.body.envio;
+  let producto = request.body.envio;
 
   conexion.connect(function (err) {
     if (err) {
@@ -162,12 +166,20 @@ app.post("/pedido", function (request, response) {
     }
     console.log("Conectado a la base de datos");
   });
-
-conexion.query("select email from usuario ")
-
   conexion.query(
     "insert into pedido (usuario,total,fecha,cupon,tarjeta,direccion,estado,envio,cantidad,producto)values(?,?,?,?,?,?,?,?,?,?)",
-    [1, 20, 2/0/22, 1, 1,20,1,1,1,1],
+    [
+      usuario,
+      total,
+      fecha,
+      cupon,
+      tarjeta,
+      direccion,
+      estado,
+      envio,
+      cantidad,
+      producto,
+    ],
     function (error, results, fields) {
       if (error) {
         console.log(error);
@@ -186,6 +198,28 @@ conexion.query("select email from usuario ")
 //   }
 //   console.log("conexion cerrada con mysql");
 // });
+
+// MongoDB
+
+const mongoClient = new MongoClient("mongodb://localhost:27017");
+//funcion para crear querys
+function ejecutarQueryMongo(
+  collection,
+  filtro,
+  orden,
+  callbackPorDocumento,
+  callback,
+  error
+) {
+  mongoClient
+    .db("ecommerce")
+    .collection(collection)
+    .find(filtro)
+    .sort(orden)
+    .forEach(callbackPorDocumento)
+    .then(callback)
+    .catch(error);
+}
 
 //servicios API
 
@@ -225,6 +259,59 @@ app.get("/", function (request, response) {
 //   response.status(401).send();
 // });
 
-app.listen(8000, function () {
-  console.log("API lista para recibir llamadas ");
+app.get("/listaproductos", function (request, response) {
+  let productos = [];
+  mongoClient
+    .db("ecommerce")
+    .collection("productos")
+    .find()
+    .forEach((producto) =>
+      productos.push({
+        id: producto._id,
+        nombre: producto.nombre,
+        foto: producto.foto,
+      })
+    )
+    .then(() => response.send(productos))
+    .catch(() => response.status(400).send());
 });
+
+app.get("/listapedidos", function (request, response) {
+  let pedidos = [];
+  ejecutarQueryMongo(
+    "pedidos",
+    {},
+    { total: -1 },
+    (pedido) =>
+      pedidos.push({
+        id: pedido._id,
+        usuario: pedido.usuario,
+        total: pedido.total,
+        direccion: pedido.direccion
+      }),
+    () => response.send(pedidos),
+    () => console.log("error")
+  );
+});
+
+mongoClient
+  .connect()
+  .then(function () {
+    const usuarios = mongoClient;
+    ejecutarQueryMongo(
+      "usuarios",
+      {},
+      {},
+      (usuario) => console.log(usuario),
+      () => console.log("okey"),
+      () => console.log("error")
+    );
+    //.forEach((usuario) => console.log(usuario));
+
+    app.listen(8000, function () {
+      console.log("API lista para recibir llamadas ");
+    });
+  })
+  .catch(function (error) {
+    console.log("no se puede conectar", error);
+  });

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/productos.css" />
 </head>
 
-<body>
+<body onload="listadoProductos()"> 
   <!-- Esto es el Header-->
   <header class="container-fluid bg-primary d-flex justify-content-between">
     <a class="navbar-brand" href="#"><span class="text-light fs-5 fw-bold"> SimGames</span></a>
@@ -41,6 +41,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Sobre nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="listadopedido.html">listado pedidos</a>
           </li>
           <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -90,7 +93,7 @@
               </div>
             </div>
             <!------------------------------------------------>
-            <div class="row imagenesCards">
+            <div class="row imagenesCards" id="tarjeta">
               <!--Contenedor de los contedores de cards-->
                 <div class="card col-3 p-0">
                   <figure>
@@ -239,6 +242,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
     crossorigin="anonymous"></script>
+    <script src="javascript/main.js"></script>
 </body>
 
 </html>
