@@ -8,11 +8,11 @@ export const HomeMenu = [
     path: "/login",
   },
   {
-    label: "Cart",
-    path: "/cart",
-  },
-  {
     label: "About",
     path: "/about",
+  },
+  {
+    label:"Products",
+    path:"/products"
   },
 ];

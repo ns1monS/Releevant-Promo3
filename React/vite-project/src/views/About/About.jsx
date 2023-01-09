@@ -60,7 +60,7 @@ export default function About() {
     <div>
       <h1>Soy el About</h1>
       {todoList.map((idList, index) => (
-        <ul className={`nav-item ${style}`} key={index}>
+        <ul className={`nav-item `} key={index}>
           <li className="nav-link active" aria-current="page" key={index}>
             <span onClick={() => underlineElement(index)}>{idList.title}</span>
             <button type="button" onClick={() => removeElement(index)}>
