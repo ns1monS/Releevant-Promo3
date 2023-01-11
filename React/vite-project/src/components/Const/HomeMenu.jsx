@@ -4,15 +4,19 @@ export const HomeMenu = [
     path: "/",
   },
   {
+    label: "Register",
+    path: "/Register",
+  },
+  {
     label: "Login",
-    path: "/login",
+    path: "/Login",
   },
   {
     label: "About",
     path: "/about",
   },
   {
-    label:"Products",
-    path:"/products"
+    label: "Products",
+    path: "/products",
   },
 ];
