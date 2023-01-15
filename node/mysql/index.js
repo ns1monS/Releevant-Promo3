@@ -5,19 +5,19 @@ import cookieParser from "cookie-parser";
 
 import userRouter from "./routes/user_router.js";
 
-// --- api middlewares ---
-app.use("/user", userRouter);
+// instanciamos express
+const app = express();
 
 // Añadimos el método config de dotenv para utilizar las variables de entorno
 dotenv.config();
-
-// instanciamos express
-const app = express();
 
 // --- middlewares de express ---
 app.use(express.json());
 app.use(express.text());
 app.use(logger("dev"));
 app.use(cookieParser());
+
+// --- api middlewares ---
+app.use("/user", userRouter);
 
 export default app;

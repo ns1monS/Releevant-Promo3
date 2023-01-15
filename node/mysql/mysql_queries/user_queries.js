@@ -2,7 +2,7 @@ import db from "../mysql.js";
 
 const userQueries = {};
 
-userQueries.getUser = async (email) => {
+userQueries.getUserbyEmail = async (email) => {
   // Conectamos con la base de datos y buscamos si existe el usuario por el email.
   let conn = null;
   try {

@@ -1,0 +1,4 @@
+1º Traer to_do de la api 
+2º mostrar los 20 primeros 
+3º poder cambiar el estado del to_do de completo o no 
+4º poder eliminarlo 

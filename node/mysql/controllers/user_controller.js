@@ -9,7 +9,7 @@ controller.addUser = async (req, res) => {
     return res.status(400).send("Error al recibir el body");
   // Buscamos el usuario en la base de datos
   try {
-    const user = await dao.getUser(email);
+    const user = await dao.getUserbyEmail(email);
     // Si existe el usuario respondemos con un 409 (conflict)
     if (user.length > 0) return res.status(409).send("usuario ya registrado");
     // Si no existe lo registramos

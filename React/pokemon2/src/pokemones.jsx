@@ -1,38 +1,43 @@
 import { useEffect, useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Pokemones = () => {
-  const [pokemones, setPokemones] = useState();
+export default function Pokemones() {
+  const [pokemones, setPokemones] = useState("");
+  const [caracter, setCaracter] = useState([]);
 
   useEffect(() => {
     async function obtenerPokemones() {
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${pokemones}`
       );
-      const pokemones = await response.json();
-      setPokemones(pokemones);
-      console.log(await response.json());
+      const detalles = await response.json();
+      setCaracter(detalles);
     }
     obtenerPokemones();
-  }, []);
+  }, [pokemones]);
+
+  function buscarPokemon(e) {
+    e.preventDefault();
+    setPokemones(e.target[0].value);
+  }
 
   return (
-    <div>
+    <div className=" text-center justify-content-md-center">
       <p>Busca tu pokemon</p>
-      <form onSubmit={setPokemones()} action="">
-        <input value={pokemones} type="text" />
+      <form onSubmit={buscarPokemon}>
+        <input />
         <button>buscar</button>
-        <ul>
-          {pokemones ? (
-            <h3>No existe ese pokemons</h3>
-          ) : (
-            pokemones.map((pokemon) => (
-              <li key={pokemon.forms.name}>{pokemon.forms.url}</li>
-            ))
-          )}
-        </ul>
       </form>
+
+      {!pokemones ? (
+        <h3>No existe ese pokemon</h3>
+      ) : (
+        <ul>
+          <li>
+            <img src={caracter.sprites.front_default} alt="" />
+          </li>
+        </ul>
+      )}
     </div>
   );
-};
-
-export default Pokemones;
+}
