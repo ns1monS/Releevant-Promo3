@@ -1,0 +1,10 @@
+Vista de login
+
+campo email
+campo password
+darle a enviar y que te compruebe en la api
+si existe : Que te lleve a productos
+no existe : que te salte un error
+
+
+

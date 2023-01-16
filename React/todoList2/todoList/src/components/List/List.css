@@ -1,0 +1,32 @@
+.checked {
+  display: inline;
+  text-decoration: line-through;
+  color: white;
+}
+
+.notchecked {
+  display: inline;
+}
+
+.todolist {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid blue;
+  border-radius: 16px;
+  padding: 4px 40px;
+  margin-top: 24px;
+}
+
+.todolistchecked {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  border: 1px solid hsl(240, 3%, 63%);
+  border-radius: 16px;
+  padding: 4px 40px;
+  margin-top: 24px;
+  background-color: hsl(240, 3%, 63%);
+}
