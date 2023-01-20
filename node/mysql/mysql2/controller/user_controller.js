@@ -16,8 +16,7 @@ controller.addUser = async (req, res) => {
       return res.status(409).send("El usuario ya esta registrado");
 
     const addUser = await dao.addUser(req.body);
-    if (addUser)
-      return res.send(`Usuario ${nombre} con id ${addUser} registrado`);
+    if (addUser) return res.sendStatus(200);
   } catch (e) {
     console.log(e.message);
   }

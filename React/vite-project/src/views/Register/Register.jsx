@@ -1,21 +1,60 @@
+import { useState } from "react";
 export default function Register() {
+  let object_newUsuario = {
+    nombre: "",
+    apellidos: "",
+    email: "",
+    password: "",
+  };
+  const [newUsuario, setNewUsuario] = useState(object_newUsuario);
+  function handleInput(e) {
+    const newRegistro = {
+      ...newUsuario,
+      [e.target.name]: e.target.value,
+    };
+    setNewUsuario(newRegistro);
+  }
+
+  function registrar(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/user", {
+      method: "POST",
+      headers: { "content-Type": "application/json" },
+      body: JSON.stringify(newUsuario),
+    }).then((response) => {
+      console.log(response.status);
+      if (response.status == 400) {
+        alert("error al recibir el body");
+      } else if (response.status == 200) {
+        alert("usuario registrado correctamente");
+      } else if (response.status == 409) {
+        alert("usuario ya registrado");
+      }
+    });
+  }
+
   return (
-    <div>
-      <div class="container justify-content-center ">
-        <div>
-          <div class="py-5 text-lg-center">
-            <h2>Registrate</h2>
-          </div>
+    <div class="container justify-content-center ">
+      <div>
+        <div class="py-5 text-lg-center">
+          <h2>Registrate</h2>
         </div>
-        <div class="d-flex">
-          <form class="needs-validation justify-content-center" novalidate />
+      </div>
+      <div class="d-flex">
+        <form
+          class="needs-validation justify-content-center"
+          onSubmit={registrar}
+        >
           <div class="row g-3 d-flex justify-content-center">
             <div class="col-sm-6">
-              <label for="password" class="form-label">
+              <label for="text" class="form-label">
                 First Name
               </label>
               <input
                 type="text"
+                name="nombre"
+                value={newUsuario.nombre}
+                onChange={handleInput}
                 class="form-control"
                 id="phone"
                 placeholder="write a first name"
@@ -26,14 +65,35 @@ export default function Register() {
               </div>
             </div>
             <div class="col-sm-6">
-              <label for="password" class="form-label">
-                Second Name
+              <label for="text" class="form-label">
+                apellidos
               </label>
               <input
                 type="text"
+                name="apellidos"
+                value={newUsuario.apellidos}
+                onChange={handleInput}
                 class="form-control"
                 id="phone"
-                placeholder="write a second name"
+                placeholder="write a surname "
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="text" class="form-label">
+                gmail
+              </label>
+              <input
+                type="text"
+                name="email"
+                value={newUsuario.email}
+                onChange={handleInput}
+                class="form-control"
+                id="phone"
+                placeholder="write a gmail"
                 required
               />
               <div class="invalid-feedback">
@@ -42,47 +102,15 @@ export default function Register() {
             </div>
             <div class="col-sm-6">
               <label for="password" class="form-label">
-                teléfono
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="phone"
-                placeholder="write a phone"
-                required
-              />
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="email" class="form-label">
-                email
-              </label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="email"
-                  placeholder="email"
-                  required
-                />
-                <div class="invalid-feedback">Your email is required.</div>
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="password" class="form-label">
                 password
               </label>
               <input
                 type="password"
                 class="form-control"
-                id="password"
+                name="password"
+                value={newUsuario.password}
+                onChange={handleInput}
                 placeholder="write a password"
-                required
               />
               <div class="invalid-feedback">
                 Please enter your shipping address.
@@ -110,16 +138,17 @@ export default function Register() {
             </div>
 
             <hr class="my-4" />
+
             <div class="my-3"></div>
           </div>
-        </div>
-        <button
-          class="w-100 btn btn-primary btn-lg"
-          type="button"
-          onclick="registroUsuario()"
-        >
-          Continue to checkout
-        </button>
+          <button
+            class="w-100 btn btn-primary btn-lg"
+            type="submit"
+            onClick={registrar}
+          >
+            Continue to checkout
+          </button>
+        </form>
         <a href="index.html">Inicio</a>
       </div>
 

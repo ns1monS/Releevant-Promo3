@@ -34,7 +34,7 @@ db.query = async (sqlQuery, params, type, conn) => {
               resolve(JSON.parse(JSON.stringify(result)));
               break;
             case "insert":
-              resolve(parseInt(result.inertId));
+              resolve(parseInt(result.insertId));
               break;
             case "update":
             case "replace":

@@ -32,13 +32,13 @@ userQueris.addUser = async (userData) => {
       email: userData.email,
       password: md5(userData.password),
       tsAlta: moment().format("YYYY-MM-DD HH:mm:ss"),
-      role: userData.role,
+      // role: userData.role,
     };
     return await db.query("INSERT INTO usuario SET ?", userObj, "insert", conn);
   } catch (e) {
     throw new Error(e);
   } finally {
-    conn && (await conn.end);
+    conn && (await conn.end());
   }
 };
 

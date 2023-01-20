@@ -1,0 +1,9 @@
+Ejercicio de node añadir producto :
+
+
+tabla imagen tiene un id una ruta 
+tabla producto con el id de la imagen 
+
+añadir producto
+post
+-------> aññadir producto --> id -------> añadir id imagenes 

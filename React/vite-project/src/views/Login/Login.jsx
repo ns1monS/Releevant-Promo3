@@ -1,34 +1,39 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useLoginModeContext } from "../../contexts/LoginContext";
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const ejemplo = {
-    email: "noel",
-    password: "1234",
-  };
-  const [fullLogin, setFullLogin] = useState({
+  const navigate = useNavigate();
+  const { toggleLoginMode } = useLoginModeContext();
+  let object_usuario = {
     email: "",
     password: "",
-  });
-  console.log(fullLogin);
-
-  function handleFullLogin(event) {
-    setFullLogin({
-      ...fullLogin,
-      [event.target.name]: event.target.value,
-    });
+  };
+  const [usuario, setUsuario] = useState(object_usuario);
+  function handleInput(e) {
+    const newRegistro = {
+      ...usuario,
+      [e.target.name]: e.target.value,
+    };
+    setUsuario(newRegistro);
   }
 
-  function validate(event, user) {
-    event.preventDefault();
-    if (fullLogin.email != ejemplo.email) {
-      alert("correo incorrecto");
-    } else if (fullLogin.password != ejemplo.password) {
-      alert("contraseña incorrecta");
-    } else {
-      alert("todo correcto");
-    }
+  function login(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/user/login", {
+      method: "POST",
+      headers: { "content-Type": "application/json" },
+      body: JSON.stringify(usuario),
+    }).then((response) => {
+      console.log(response.status);
+      if (response.status == 400) {
+        alert("error al recibir el body");
+      } else if (response.status == 200) {
+        toggleLoginMode();
+      } else if (response.status == 409) {
+        alert("usuario ya registrado");
+      }
+    });
   }
 
   return (
@@ -42,18 +47,18 @@ export default function Login() {
         <div class="d-flex">
           <form
             class="needs-validation justify-content-center"
-            onSubmit={(event) => validate(event, fullLogin)}
+            onSubmit={login}
           >
             <div class="row g-3 d-flex justify-content-center">
               <div class="col-sm-6">
                 <label for="text" class="form-label">
-                  First Name
+                  email
                 </label>
                 <input
                   type="text"
                   name="email"
-                  value={fullLogin.email}
-                  onChange={handleFullLogin}
+                  value={usuario.email}
+                  onChange={handleInput}
                   class="form-control"
                   id="phone"
                   placeholder="write a first name"
@@ -71,8 +76,8 @@ export default function Login() {
                   type="password"
                   class="form-control"
                   name="password"
-                  value={fullLogin.password}
-                  onChange={handleFullLogin}
+                  value={usuario.password}
+                  onChange={handleInput}
                   placeholder="write a password"
                 />
                 <div class="invalid-feedback">
@@ -111,7 +116,7 @@ export default function Login() {
             <button
               class="w-100 btn btn-primary btn-lg"
               type="submit"
-              onClick={validate}
+              onClick={login}
             >
               Continue to checkout
             </button>
